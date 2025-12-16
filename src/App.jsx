@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ThemeToggle from './components/ThemeToggle';
+import Footer from './components/Footer'
 // import "./App.css"
 
 // Page Components
@@ -27,6 +28,7 @@ function App() {
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </main>
+      <Footer />
       {/* Footer component would go here */}
     </Router>
   );

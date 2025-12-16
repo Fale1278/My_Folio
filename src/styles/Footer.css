@@ -1,0 +1,118 @@
+/* ===============================
+   FOOTER
+================================ */
+
+.site-footer {
+  margin-top: 8rem;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--color-background-card)
+  );
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 3rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 3rem;
+}
+
+/* BRAND */
+.footer-brand h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.5px;
+}
+
+.footer-brand p {
+  color: var(--color-text-secondary);
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+/* NAV */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-nav a {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--color-accent);
+  transform: translateX(4px);
+}
+
+/* SOCIALS */
+.footer-socials {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.footer-socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--color-background-main);
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-background-card);
+  transform: translateY(-4px);
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  padding: 1.2rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.footer-note {
+  opacity: 0.7;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    margin: 0 auto;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+  }
+}
