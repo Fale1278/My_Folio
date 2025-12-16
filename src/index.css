@@ -1,5 +1,5 @@
 /* Ensure variables.css is linked/imported first */
-@import './variables.css'; 
+@import '../src/styles/Variables.css'; 
 
 /* GLOBAL RESET & BASE STYLES */
 * {
