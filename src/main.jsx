@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 
 // Ensure we import the core CSS variables for light/dark mode setup
-import './styles/variables.css'; 
+// import './styles/variables.css'; 
 
 // 1. Get the root element from the HTML (usually defined in index.html)
 const rootElement = document.getElementById('root');
