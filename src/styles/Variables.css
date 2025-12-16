@@ -8,7 +8,7 @@
 :root {
   --color-text-primary: #1a1a2e;     /* Dark text */
   --color-text-secondary: #c7bfbf;   /* Gray text */
-  --color-background-main: #fffcfc;  /* Very light background */
+  --color-background-main: #fdfdfd;  /* Very light background */
   --color-background-card: #ffffff;  /* Card background */
   --color-accent: #ffb578;           /* Signature Accent Color */
   --color-shadow-light: rgba(0, 0, 0, 0.1);

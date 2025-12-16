@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+
 import '../styles/Contact.css';
 
 const ContactPage = () => {
   const contactInfo = {
-    email: 'your.professional@email.com',
-    github: 'https://github.com/YourUsername',
-    linkedin: 'https://linkedin.com/in/YourUsername',
+    email: 'kingnanmuafale@email.com',
+    github: 'https://github.com/Fale1278',
+    linkedin: '',
     twitter: 'https://twitter.com/YourHandle',
   };
 
@@ -43,16 +45,37 @@ const ContactPage = () => {
           </a>
 
           <div className="social-links">
-            <a href={contactInfo.linkedin} target="_blank" rel="noreferrer">
-              LinkedIn
+            <a
+              href={contactInfo.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn Profile"
+              className="social-icon linkedin"
+            >
+              <FaLinkedinIn />
             </a>
-            <a href={contactInfo.github} target="_blank" rel="noreferrer">
-              GitHub
+
+            <a
+              href={contactInfo.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub Profile"
+              className="social-icon github"
+            >
+              <FaGithub />
             </a>
-            <a href={contactInfo.twitter} target="_blank" rel="noreferrer">
-              Twitter
+
+            <a
+              href={contactInfo.twitter}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Twitter Profile"
+              className="social-icon twitter"
+            >
+              <FaTwitter />
             </a>
           </div>
+
 
           <p className="contact-note">
             I typically respond within 24 hours. For urgent opportunities, email is best.
