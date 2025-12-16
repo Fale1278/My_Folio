@@ -1,0 +1,99 @@
+/* --- CONTACT PAGE STYLES --- */
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background-color: var(--color-background-card);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px var(--color-shadow-light);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--color-text-secondary);
+  border-radius: 8px;
+  background-color: var(--color-background-main);
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--color-accent-rgb), 0.3); /* Subtle focus ring (requires RGB variable) */
+}
+
+/* Ensure textarea resizes cleanly */
+.contact-form textarea {
+    resize: vertical;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-accent);
+  color: var(--color-background-card);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: darken(var(--color-accent), 10%); /* If using SCSS, otherwise use a slightly darker hex */
+  transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+  background-color: var(--color-text-secondary);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.form-status {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-status.success {
+  background-color: #d4edda; /* Light green */
+  color: #155724; /* Dark green text */
+}
+
+.form-status.error {
+  background-color: #f8d7da; /* Light red */
+  color: #721c24; /* Dark red text */
+}
+
+/* Dark Mode Overrides for Status */
+.theme-dark .form-status.success {
+    background-color: #0d3618;
+    color: #90ee90;
+}
+
+.theme-dark .form-status.error {
+    background-color: #4a1717;
+    color: #ff6347;
+}

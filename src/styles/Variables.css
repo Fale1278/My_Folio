@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}/* Base Variables (Default/Light Theme) */
+
+
+:root {
+  --color-text-primary: #1a1a2e;     /* Dark text */
+  --color-text-secondary: #c7bfbf;   /* Gray text */
+  --color-background-main: #fffcfc;  /* Very light background */
+  --color-background-card: #ffffff;  /* Card background */
+  --color-accent: #ffb578;           /* Signature Accent Color */
+  --color-shadow-light: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s ease-in-out;
+}
+
+/* Dark Theme Overrides */
+.theme-dark {
+  --color-text-primary: #b3b3b3;     /* Light text */
+  --color-text-secondary: #c0c0c0;   /* Light gray text */
+  --color-background-main: #000000;  /* Deep dark blue background */
+  --color-background-card: #0e0e0e;  /* Darker card background */
+  --color-accent: #ffb578;           /* Complimentary Accent (e.g., Coral) */
+  --color-shadow-light: rgba(255, 255, 255, 0.1);
+}
+
+/* Global Transition for Smoothness */
+body, * {
+  transition: all var(--transition-speed);
+}
