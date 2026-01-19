@@ -6,8 +6,8 @@ import heroImage from '../assets/hero.jpg';
    Typing Effect
 ================================ */
 const TEXTS = [
-  "I'm Fale King Nanmua",
-  "I am a",
+  "I'm Fale King Nanmua.",
+  "I am a -",
   "Front-End Engineer.",
   "UI / UX Designer.",
   "React & Interface Architect."
