@@ -14,7 +14,7 @@ const TEXTS = [
 ];
 
 const TYPING_SPEED = 90;
-const DELETING_SPEED = 50;
+const DELETING_SPEED = 120;
 const PAUSE_DURATION = 1400;
 
 const TypingHeadline = () => {
