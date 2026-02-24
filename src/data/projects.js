@@ -1,5 +1,6 @@
 import myBlogImg from "../assets/MyBlog.png"
 import TKF from "../assets/TKF.png"
+import Reach from "../assets/Reach.png"
 
 export const projects = [
   {
@@ -23,22 +24,22 @@ export const projects = [
       'A productivity dashboard leveraging browser storage and advanced React hooks.',
     longDescription:
       'Built to demonstrate effective state management, data persistence, and UI clarity in complex user interfaces.',
-    tags: ['React Hooks', 'CSS Grid', 'LocalStorage'],
+    tags: ['Html', 'CSS Grid', 'Javascript'],
     image: TKF,
     live: 'https://fale1278.github.io/TKF-THE-KINGSHIMA-FOUNDATION/',
     github: 'https://github.com/Fale1278/TKF-THE-KINGSHIMA-FOUNDATION',
   },
   {
     id: 3,
-    title: 'Animated Portfolio',
-    slug: 'animated-portfolio',
+    title: 'Reach Transit',
+    slug: 'commercial-company',
     description:
-      'A motion-first portfolio built with Framer Motion and modern CSS techniques.',
+      'A website for travels, car bookings, and journeyings',
     longDescription:
-      'This portfolio focuses on animation, interaction design, and visual storytelling while maintaining performance.',
+      'This portfolio focuses on commercial transport, Waybills, Car Bookings and ticketing...',
     tags: ['React', 'Framer Motion', 'CSS'],
-    image: '/images/projectshero.jpg',
-    live: '#',
-    github: '#',
+    image: Reach,
+    live: 'https://reach-transit.vercel.app/',
+    github: 'https://github.com/Fale1278/Reach-Transit',
   },
 ];

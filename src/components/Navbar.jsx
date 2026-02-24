@@ -13,7 +13,7 @@ const Navbar = () => {
     <header className="navbar-header">
       <div className="navbar-container">
         <NavLink to="/" className="navbar-logo" onClick={() => setIsOpen(false)}>
-          KNF {/* Signature Logo */}
+          King. {/* Signature Logo */}
         </NavLink>
         
         {/* Hamburger Menu Button */}

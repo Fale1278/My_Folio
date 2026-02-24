@@ -65,6 +65,9 @@
 
   display: flex;
 
+  justify-content: center;
+  
+
   flex-wrap: wrap;
 
   gap: 0.6rem;
@@ -92,20 +95,14 @@
    HERO IMAGE
 ========================================= */
 
-.project-hero-wrapper {
-
+.project-hero-wrapper {  
   border-radius: 1.5rem;
-
   overflow: hidden;
-
   margin-bottom: 3rem;
-
   box-shadow:
-
     0 30px 80px rgba(0,0,0,0.45),
-
     0 0 0 1px rgba(255,255,255,0.05);
-
+  width: 30rem;
 }
 
 .project-hero-image {
@@ -114,7 +111,7 @@
 
   height: auto;
 
-  display: block;
+  /* display: inline; */
 
 }
 
