@@ -1,252 +1,94 @@
-/* =========================================
-   PROJECT DETAILS — ELITE CASE STUDY DESIGN
-========================================= */
-
-.project-detail-page {
-
+.detail-container {
   max-width: 1000px;
-
   margin: 0 auto;
-
-  padding: clamp(3rem, 7vw, 6rem) 1.5rem;
-
 }
 
-
-/* =========================================
-   BACK LINK
-========================================= */
-
-.back-link {
-
-  display: inline-block;
-
-  margin-bottom: 2rem;
-
-  color: var(--color-text-secondary);
-
-  font-weight: 500;
-
-  transition: all 0.3s ease;
-
-}
-
-.back-link:hover {
-
-  color: var(--color-accent);
-
-  transform: translateX(-6px);
-
-}
-
-
-/* =========================================
-   TITLE
-========================================= */
-
-.project-title-detail {
-
-  font-size: clamp(2.8rem, 6vw, 4rem);
-
-  font-weight: 800;
-
-  margin-bottom: 1rem;
-
-  letter-spacing: -0.02em;
-
-}
-
-
-/* =========================================
-   TAGS
-========================================= */
-
-.project-meta {
-
+.back-nav {
   display: flex;
-
-  justify-content: center;
-  
-
-  flex-wrap: wrap;
-
-  gap: 0.6rem;
-
-  margin-bottom: 2.5rem;
-
-}
-
-.tag {
-
-  padding: 0.35rem 0.8rem;
-
-  border-radius: 999px;
-
-  font-size: 0.8rem;
-
-  border: 1px solid rgba(255,255,255,0.15);
-
-  color: var(--color-text-secondary);
-
-}
-
-
-/* =========================================
-   HERO IMAGE
-========================================= */
-
-.project-hero-wrapper {  
-  border-radius: 1.5rem;
-  overflow: hidden;
-  margin-bottom: 3rem;
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.45),
-    0 0 0 1px rgba(255,255,255,0.05);
-  width: 30rem;
-}
-
-.project-hero-image {
-
-  width: 100%;
-
-  height: auto;
-
-  /* display: inline; */
-
-}
-
-
-/* =========================================
-   CONTENT
-========================================= */
-
-.project-content {
-
-  max-width: 700px;
-
-}
-
-.project-description-detail {
-
-  font-size: 1.15rem;
-
-  line-height: 1.8;
-
-  color: var(--color-text-secondary);
-
-}
-
-
-/* =========================================
-   BUTTONS
-========================================= */
-
-.project-links {
-
-  margin-top: 3rem;
-
-  display: flex;
-
-  gap: 1rem;
-
-  flex-wrap: wrap;
-
-}
-
-
-.primary-btn {
-
-  padding: 0.9rem 2rem;
-
-  border-radius: 999px;
-
-  background: var(--color-accent);
-
-  color: white;
-
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 600;
-
-  text-decoration: none;
-
-  transition: all 0.3s ease;
-
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
 }
 
-.primary-btn:hover {
-
-  transform: translateY(-3px);
-
-  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-
-}
-
-
-.secondary-btn {
-
-  padding: 0.9rem 2rem;
-
-  border-radius: 999px;
-
-  border: 1px solid rgba(255,255,255,0.15);
-
-  color: var(--color-text-primary);
-
-  text-decoration: none;
-
-  transition: all 0.3s ease;
-
-}
-
-.secondary-btn:hover {
-
-  border-color: var(--color-accent);
-
+.back-nav:hover {
   color: var(--color-accent);
-
 }
 
-
-/* =========================================
-   404 PAGE
-========================================= */
-
-.project-not-found {
-
-  text-align: center;
-
-  padding: 8rem 1rem;
-
+.detail-header {
+  margin-bottom: 3rem;
 }
 
-.project-not-found h1 {
-
-  font-size: 5rem;
-
-  color: var(--color-accent);
-
+.detail-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 850;
+  margin-bottom: 1.5rem;
 }
 
-.back-button {
-
-  margin-top: 2rem;
-
-  display: inline-block;
-
-  color: var(--color-accent);
-
+.detail-tags {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
+.detail-tag {
+  padding: 0.5rem 1.25rem;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
 
-/* =========================================
-   MOBILE
-========================================= */
+.detail-hero-section {
+  width: 100%;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin-bottom: 4rem;
+  aspect-ratio: 16/9;
+}
 
-@media (max-width: 600px) {
+.detail-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  .project-title-detail {
+.detail-content-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+}
 
-    font-size: 2.2rem;
+.detail-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 
+.detail-info p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+.sidebar-card {
+  padding: 2.5rem;
+  border-radius: 2rem;
+}
+
+.sidebar-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .detail-content-grid {
+    grid-template-columns: 1fr;
   }
-
 }

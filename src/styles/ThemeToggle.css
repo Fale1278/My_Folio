@@ -1,68 +1,35 @@
-/* --- THEME TOGGLE STYLES --- */
-
 .theme-toggle-button {
-  /* Position and size */
-  position: fixed; /* Fixed position */
+  position: fixed;
   bottom: 2rem;
   right: 2rem;
   width: 50px;
   height: 50px;
-  
-  /* Appearance */
-  background-color: var(--color-background-card); 
-  color: var(--color-accent); /* Icon color based on accent */
-  border: 2px solid var(--color-accent); 
   border-radius: 50%;
-  box-shadow: 0 4px 15px var(--color-shadow-light);
-  cursor: pointer;
-  
-  /* Text/Icon styling */
-  font-size: 1.5rem;
-  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  /* Animation */
-  transition: background-color var(--transition-speed), 
-              color var(--transition-speed), 
-              border-color var(--transition-speed), 
-              transform 0.2s ease-out;
-  z-index: 1001; /* Ensure it stays above other content */
+  cursor: pointer;
+  z-index: 2500;
+  color: var(--color-text-primary);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Hover effect */
 .theme-toggle-button:hover {
-  transform: scale(1.05) rotate(10deg); /* Slight lift and rotation */
-  box-shadow: 0 8px 20px var(--color-shadow-light);
-}
-
-/* Focus state for accessibility */
-.theme-toggle-button:focus {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-/* * Dark Mode Visual Override 
-* When in dark mode, the button background should contrast nicely
-*/
-.theme-dark .theme-toggle-button {
-  background-color: var(--color-background-main); /* Darker background */
+  transform: scale(1.1) translateY(-5px);
   border-color: var(--color-accent);
-  /* The sun/moon icons themselves are unicode characters (emojis), 
-     so their colors are harder to control directly via CSS color property 
-     unless they are SVG/Font icons. We rely on the emoji rendering here. 
-  */
+  color: var(--color-accent);
 }
 
-
-/* RESPONSIVENESS */
-@media (max-width: 600px) {
-    .theme-toggle-button {
-        bottom: 1rem;
-        right: 1rem;
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
-    }
+@media (max-width: 768px) {
+  .theme-toggle-button {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+  }
 }

@@ -1,134 +1,109 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 import '../styles/Hero.css';
 import heroImage from '../assets/hero.jpg';
 
-/* ===============================
-   Typing Effect
-================================ */
 const TEXTS = [
-  "I'm Fale King Nanmua.",
-  "I am a -",
+  "Fale King Nanmua.",
   "Front-End Engineer.",
   "UI / UX Designer.",
-  "React & Interface Architect."
+  "React Architect."
 ];
 
-const TYPING_SPEED = 90;
-const DELETING_SPEED = 120;
-const PAUSE_DURATION = 1400;
-
-const TypingHeadline = () => {
+const Hero = () => {
   const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    if (!isDeleting && subIndex === TEXTS[index].length) {
-      setTimeout(() => setIsDeleting(true), PAUSE_DURATION);
-      return;
-    }
-
-    if (isDeleting && subIndex === 0) {
-      setIsDeleting(false);
-      setIndex((prev) => (prev + 1) % TEXTS.length);
-      return;
-    }
-
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (isDeleting ? -1 : 1));
-    }, isDeleting ? DELETING_SPEED : TYPING_SPEED);
-
-    return () => clearTimeout(timeout);
-  }, [subIndex, index, isDeleting]);
-
-  return (
-    <h1 className="hero-headline">
-      {TEXTS[index].substring(0, subIndex)}
-      <span className="cursor">|</span>
-    </h1>
-  );
-};
-
-/* ===============================
-   Counter
-================================ */
-const Counter = ({ value, label }) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const duration = 1200;
-    const increment = value / (duration / 16);
-
     const timer = setInterval(() => {
-      start += increment;
-      if (start >= value) {
-        setCount(value);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
-
+      setIndex((prev) => (prev + 1) % TEXTS.length);
+    }, 3000);
     return () => clearInterval(timer);
-  }, [value]);
+  }, []);
 
-  return (
-    <div className="stat-card">
-      <h3>{count}+</h3>
-      <p>{label}</p>
-    </div>
-  );
-};
-
-/* ===============================
-   Home Page
-================================ */
-const HomePage = () => {
   return (
     <section className="hero-section">
       <div className="hero-grid">
+        <motion.div 
+          className="hero-content"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.span 
+            className="hero-greeting"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            Available for new opportunities
+          </motion.span>
+          
+          <h1 className="hero-title">
+            Creative <br />
+            <span className="accent-text">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={TEXTS[index]}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {TEXTS[index]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+          </h1>
 
-        {/* LEFT: TEXT CONTENT */}
-        <div className="hero-content">
-          <h2 className="glitch-text" data-text="Hi There!!!">
-          Hi There!!!
-          </h2>
-
-          <TypingHeadline />
-
-          <p className="hero-tagline">
-            I design and build <strong>clean, scalable, and high-performance</strong> web
-            interfaces with strong attention to usability, accessibility,
-            and modern frontend architecture.
+          <p className="hero-description">
+            I craft high-performance, pixel-perfect digital experiences. 
+            Focused on building scalable frontend systems with aesthetic precision.
           </p>
 
           <div className="hero-actions">
-            <a href="/projects" className="cta-button primary">
-              View Selected Work
-            </a>
-            <a href="/contact" className="cta-button secondary">
-              Hire Me
-            </a>
+            <motion.a 
+              href="/projects" 
+              className="cta-button primary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explore My Work <ArrowRight size={18} />
+            </motion.a>
+            <div className="social-links">
+              <a href="https://github.com/Fale1278" target="_blank" rel="noreferrer"><Github size={20} /></a>
+              <a href="#" target="_blank" rel="noreferrer"><Linkedin size={20} /></a>
+              <a href="mailto:contact@example.com"><Mail size={20} /></a>
+            </div>
           </div>
+        </motion.div>
 
-          <div className="hero-stats">
-            <Counter value={10} label="Projects Built" />
-            <Counter value={3} label="Core Focus Areas" />
-            <Counter value={100} label="Commitment to Growth" />
+        <motion.div 
+          className="hero-visual"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+        >
+          <div className="image-blob-container">
+             <div className="blob-gradient"></div>
+             <img src={heroImage} alt="King" className="hero-profile-img" />
           </div>
-        </div>
-
-        {/* RIGHT: HERO IMAGE */}
-        <div className="hero-image-wrapper">
-          <div className="hero-image-glass">
-            <img src={heroImage} alt="King — Frontend Engineer" />
-          </div>
-        </div>
-
+        </motion.div>
       </div>
+
+      <motion.div 
+        className="scroll-indicator"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+      >
+        <div className="mouse">
+          <div className="wheel"></div>
+        </div>
+      </motion.div>
     </section>
   );
 };
 
-export default HomePage;
+export default Hero;
+

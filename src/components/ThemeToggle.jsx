@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/ThemeToggle.css'; // Add styling for the button itself (e.g., animated sun/moon icon)
+import { Sun, Moon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import '../styles/ThemeToggle.css';
 
 const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
 
-  // 1. Check local storage on mount
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'theme-dark') {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'theme-dark' || (!savedTheme && prefersDark)) {
       document.documentElement.className = 'theme-dark';
       setIsDark(true);
     } else {
@@ -16,25 +19,28 @@ const ThemeToggle = () => {
     }
   }, []);
 
-  // 2. Handler to switch theme
   const toggleTheme = () => {
-    if (isDark) {
-      document.documentElement.className = 'theme-light';
-      localStorage.setItem('theme', 'theme-light');
-      setIsDark(false);
-    } else {
-      document.documentElement.className = 'theme-dark';
-      localStorage.setItem('theme', 'theme-dark');
-      setIsDark(true);
-    }
+    const newTheme = isDark ? 'theme-light' : 'theme-dark';
+    document.documentElement.className = newTheme;
+    localStorage.setItem('theme', newTheme);
+    setIsDark(!isDark);
   };
 
   return (
-    <button className="theme-toggle-button" onClick={toggleTheme} aria-label="Toggle light and dark mode">
-      {/* Icon logic: show moon if it's light mode, show sun if it's dark mode */}
-      {isDark ? '☀️' : '🌙'}
+    <button className="theme-toggle-button glass" onClick={toggleTheme} aria-label="Toggle theme">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={isDark ? 'dark' : 'light'}
+          initial={{ y: 20, opacity: 0, rotate: 45 }}
+          animate={{ y: 0, opacity: 1, rotate: 0 }}
+          exit={{ y: -20, opacity: 0, rotate: -45 }}
+          transition={{ duration: 0.3 }}
+        >
+          {isDark ? <Sun size={20} /> : <Moon size={20} />}
+        </motion.div>
+      </AnimatePresence>
     </button>
   );
 };
 
-export default ThemeToggle;
+export default ThemeToggle;

@@ -1,69 +1,51 @@
 import React from 'react';
-import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import '../styles/Footer.css';
 
 const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="footer-inner">
-
-        {/* BRAND */}
         <div className="footer-brand">
-          <h2>King.</h2>
+          <h2 className="footer-logo">King</h2>
           <p>
-            Frontend Engineer focused on crafting high-performance,
-            visually refined web experiences.
+            Architecting the future of web interfaces with precision and aesthetic excellence.
           </p>
         </div>
 
-        {/* NAV */}
         <nav className="footer-nav">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/projects">Projects</a>
-          <a href="/contact">Contact</a>
+          <div className="footer-nav-col">
+            <h4>Sitemap</h4>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/contact">Contact</a>
+          </div>
+          <div className="footer-nav-col">
+            <h4>Social</h4>
+            <a href="https://github.com/Fale1278" target="_blank" rel="noreferrer">Github</a>
+            <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="#" target="_blank" rel="noreferrer">Twitter</a>
+          </div>
         </nav>
 
-        {/* SOCIALS */}
-        <div className="footer-socials">
-          <a
-            href="https://github.com/YourUsername"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
-
-          <a
-            href="https://linkedin.com/in/YourUsername"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedinIn />
-          </a>
-
-          <a
-            href="https://twitter.com/YourHandle"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-          >
-            <FaTwitter />
-          </a>
+        <div className="footer-contact">
+          <h4>Get in Touch</h4>
+          <a href="mailto:contact@king.dev" className="footer-email">contact@king.dev</a>
+          <div className="footer-social-icons">
+             <a href="https://github.com/Fale1278" target="_blank" rel="noreferrer"><Github size={20} /></a>
+             <a href="#" target="_blank" rel="noreferrer"><Linkedin size={20} /></a>
+             <a href="#" target="_blank" rel="noreferrer"><Twitter size={20} /></a>
+          </div>
         </div>
       </div>
 
-      {/* BOTTOM BAR */}
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} King. All rights reserved.</span>
-        <span className="footer-note">
-          Built with React & modern CSS
-        </span>
+        <p>© {new Date().getFullYear()} King. Designed & Developed with Passion.</p>
       </div>
     </footer>
   );
 };
 
 export default Footer;
+

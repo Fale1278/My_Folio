@@ -5,12 +5,12 @@ import Reach from "../assets/Reach.png"
 export const projects = [
   {
     id: 1,
-    title: 'Personal Blog Website',
-    slug: 'ecommerce-platform',
+    title: 'Personal Blog Platform',
+    slug: 'personal-blog',
     description:
       'A scalable blogging experience built with modern React patterns, focusing on performance and maintainability.',
     longDescription:
-      'This project explores scalable frontend architecture for e-commerce applications, including reusable components, optimized rendering, and responsive layouts.',
+      'This project explores scalable architecture for content-heavy applications, featuring custom hooks, optimized rendering, and a fluid responsive design.',
     tags: ['React', 'Redux', 'Node.js'],
     image: myBlogImg ,
     live: 'https://my-personal-blog-gamma.vercel.app/',
@@ -18,13 +18,13 @@ export const projects = [
   },
   {
     id: 2,
-    title: 'Tech Organisation PLatform',
-    slug: 'personal-dashboard',
+    title: 'Kingshima Foundation',
+    slug: 'kingshima-foundation',
     description:
-      'A productivity dashboard leveraging browser storage and advanced React hooks.',
+      'A professional tech organization platform leveraging modern web standards and high-performance UI components.',
     longDescription:
-      'Built to demonstrate effective state management, data persistence, and UI clarity in complex user interfaces.',
-    tags: ['Html', 'CSS Grid', 'Javascript'],
+      'Built to demonstrate effective brand identity, community engagement, and UI clarity in organizational web platforms.',
+    tags: ['React', 'CSS Grid', 'Framer Motion'],
     image: TKF,
     live: 'https://fale1278.github.io/TKF-THE-KINGSHIMA-FOUNDATION/',
     github: 'https://github.com/Fale1278/TKF-THE-KINGSHIMA-FOUNDATION',
@@ -32,14 +32,15 @@ export const projects = [
   {
     id: 3,
     title: 'Reach Transit',
-    slug: 'commercial-company',
+    slug: 'reach-transit',
     description:
-      'A website for travels, car bookings, and journeyings',
+      'A comprehensive transit solution for car bookings, waybills, and travel logistics.',
     longDescription:
-      'This portfolio focuses on commercial transport, Waybills, Car Bookings and ticketing...',
-    tags: ['React', 'Framer Motion', 'CSS'],
+      'This platform focuses on complex logistics management, real-time booking flows, and accessibility for transit services.',
+    tags: ['React', 'Framer Motion', 'Interaction Design'],
     image: Reach,
     live: 'https://reach-transit.vercel.app/',
     github: 'https://github.com/Fale1278/Reach-Transit',
   },
 ];
+

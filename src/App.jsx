@@ -2,20 +2,20 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ThemeToggle from './components/ThemeToggle';
-import Footer from './components/Footer'
-// import "./App.css"
+import ThreeBackground from './components/ThreeBackground';
+import Footer from './components/Footer';
 
 // Page Components
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
-import ProjectDetails from './pages/ProjectDetails'; // For individual project view
+import ProjectDetails from './pages/ProjectDetails';
 
-// Main application component
 function App() {
   return (
     <Router>
+      <ThreeBackground />
       <Navbar />
       <ThemeToggle />
       <main className="main-content">
@@ -29,7 +29,6 @@ function App() {
         </Routes>
       </main>
       <Footer />
-      {/* Footer component would go here */}
     </Router>
   );
 }

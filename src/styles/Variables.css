@@ -1,31 +1,105 @@
+:root {
+  /* Dynamic Design Tokens — Optimized for Modern Tech Aesthetics */
+  
+  /* Light Mode (Sophisticated "Milk & Gold") */
+  --color-text-primary: #0a0a0b;
+  --color-text-secondary: #5a5a62;
+  --color-text-muted: #888891;
+  
+  --color-background-main: #fcfcfd;
+  --color-background-sub: #f4f4f7;
+  --color-background-card: #ffffff;
+  
+  --color-accent: #d4af37;           /* Refined Metallic Gold */
+  --color-accent-hover: #b8962d;
+  --color-accent-soft: rgba(212, 175, 55, 0.08);
+  
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-shadow: rgba(0, 0, 0, 0.04);
+  
+  /* Glassmorphism Defaults */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-blur: 16px;
+
+  /* Typography */
+  --font-main: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing & Borders */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  --section-padding: 8rem 0;
+  --container-max-width: 1320px;
+
+  /* Animation */
+  --transition-speed: 0.4s;
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-dark {
+  /* Dark Mode ("Obsidian Royale" — Deep Blacks & Glowing Accents) */
+  --color-text-primary: #f8f8f8;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #66666e;
+  
+  --color-background-main: #020202;
+  --color-background-sub: #080808;
+  --color-background-card: #0d0d0e;
+  
+  --color-accent: #e4c466;           /* Lighter, glowing Gold */
+  --color-accent-hover: #f1d37e;
+  --color-accent-soft: rgba(228, 196, 102, 0.12);
+  
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-shadow: rgba(0, 0, 0, 0.6);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(10, 10, 12, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Global Base Resets */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}/* Base Variables (Default/Light Theme) */
-
-
-:root {
-  --color-text-primary: #1a1a2e;     /* Dark text */
-  --color-text-secondary: #c7bfbf;   /* Gray text */
-  --color-background-main: #fdfdfd;  /* Very light background */
-  --color-background-card: #ffffff;  /* Card background */
-  --color-accent: #ffb578;           /* Signature Accent Color */
-  --color-shadow-light: rgba(0, 0, 0, 0.1);
-  --transition-speed: 0.3s ease-in-out;
 }
 
-/* Dark Theme Overrides */
-.theme-dark {
-  --color-text-primary: #b3b3b3;     /* Light text */
-  --color-text-secondary: #c0c0c0;   /* Light gray text */
-  --color-background-main: #000000;  /* Deep dark blue background */
-  --color-background-card: #0e0e0e;  /* Darker card background */
-  --color-accent: #ffb578;           /* Complimentary Accent (e.g., Coral) */
-  --color-shadow-light: rgba(255, 255, 255, 0.1);
+html {
+  scroll-behavior: smooth;
 }
 
-/* Global Transition for Smoothness */
-body, * {
-  transition: all var(--transition-speed);
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-background-main);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* High-End Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 5px;
+  border: 3px solid var(--color-background-main);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
 }

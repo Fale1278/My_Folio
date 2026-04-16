@@ -1,11 +1,12 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { projects } from "../data/projects";
 import "../styles/ProjectDetails.css";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
@@ -22,10 +23,10 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <section className="project-not-found">
+      <section className="project-not-found section-padding">
         <h1>404</h1>
         <p>Project not found</p>
-        <Link to="/projects" className="back-button">
+        <Link to="/projects" className="cta-button primary">
           Back to Projects
         </Link>
       </section>
@@ -33,104 +34,64 @@ const ProjectDetails = () => {
   }
 
   return (
-    <section className="project-detail-page">
+    <section className="project-detail-page section-padding">
+      <div className="detail-container">
+        <motion.div initial="hidden" animate="visible" variants={fadeUp}>
+          <Link to="/projects" className="back-nav">
+            <ArrowLeft size={18} /> Back to Projects
+          </Link>
+        </motion.div>
 
-      {/* Back Navigation */}
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={fadeUp}
-      >
-        <Link to="/projects" className="back-link">
-          ← Back to Projects
-        </Link>
-      </motion.div>
+        <motion.div 
+          className="detail-header"
+          initial="hidden" animate="visible" variants={fadeUp}
+        >
+          <h1 className="detail-title">{project.title}</h1>
+          <div className="detail-tags">
+            {project.tags.map((tag, i) => (
+              <span key={i} className="detail-tag glass">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </motion.div>
 
+        <motion.div
+          className="detail-hero-section"
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img src={project.image} alt={project.title} className="detail-main-img" />
+        </motion.div>
 
-      {/* Title */}
-      <motion.h1
-        className="project-title-detail"
-        initial="hidden"
-        animate="visible"
-        variants={fadeUp}
-      >
-        {project.title}
-      </motion.h1>
-
-
-      {/* Tags */}
-      <motion.div
-        className="project-meta"
-        initial="hidden"
-        animate="visible"
-        variants={fadeUp}
-      >
-        {project.tags.map((tag, i) => (
-          <span key={i} className="tag">
-            {tag}
-          </span>
-        ))}
-      </motion.div>
-
-
-      {/* Hero Image */}
-      <motion.div
-        className="project-hero-wrapper"
-        initial={{ opacity: 0, scale: 0.96 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.7 }}
-      >
-        <img
-          src={project.image}
-          alt={project.title}
-          className="project-hero-image"
-        />
-      </motion.div>
-
-
-      {/* Content */}
-      <motion.div
-        className="project-content"
-        initial="hidden"
-        animate="visible"
-        variants={fadeUp}
-      >
-        <p className="project-description-detail">
-          {project.longDescription}
-        </p>
-
-
-        {/* CTA Buttons */}
-        <div className="project-links">
-
-          {project.live && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noreferrer"
-              className="primary-btn"
-            >
-              View Live Project
-            </a>
-          )}
-
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noreferrer"
-              className="secondary-btn"
-            >
-              View Source Code
-            </a>
-          )}
-
+        <div className="detail-content-grid">
+           <motion.div className="detail-info" {...fadeUp}>
+              <h3>Overview</h3>
+              <p>{project.longDescription}</p>
+           </motion.div>
+           
+           <motion.div className="detail-sidebar" {...fadeUp}>
+              <div className="sidebar-card glass">
+                 <h3>Project Links</h3>
+                 <div className="sidebar-actions">
+                    {project.live && (
+                      <a href={project.live} target="_blank" rel="noreferrer" className="cta-button primary full-width">
+                        Live Preview <ExternalLink size={18} />
+                      </a>
+                    )}
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noreferrer" className="cta-button secondary full-width">
+                        Codebase <Github size={18} />
+                      </a>
+                    )}
+                 </div>
+              </div>
+           </motion.div>
         </div>
-
-      </motion.div>
-
+      </div>
     </section>
   );
 };
 
-export default ProjectDetails;
+export default ProjectDetails;
